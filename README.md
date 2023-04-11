@@ -1,5 +1,5 @@
 # SoniEnkripsi
- Matkul Keamanan Sistem dan Jaringan Komputer PTI 4B
+Matkul Keamanan Sistem dan Jaringan Komputer PTI 4B
  
 SONI HENDARKANTO (PTI 4B)
 21183207051
