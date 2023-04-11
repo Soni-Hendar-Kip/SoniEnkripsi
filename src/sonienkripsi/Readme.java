@@ -126,6 +126,7 @@ public class Readme extends javax.swing.JFrame {
         TextSoniHendar_.setFont(new java.awt.Font("Liberation Sans", 3, 14)); // NOI18N
         TextSoniHendar_.setForeground(new java.awt.Color(0, 0, 255));
         TextSoniHendar_.setText("Soni Hendar // PTI 4B");
+        TextSoniHendar_.setToolTipText("Klik to opeh Github");
         TextSoniHendar_.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TextSoniHendar_MouseClicked(evt);
@@ -303,7 +304,7 @@ public class Readme extends javax.swing.JFrame {
         TextSoniHendar_.setForeground(Color.red);
         try {
             Desktop desktop = Desktop.getDesktop();
-            URI url = new URI("https://github.com/Soni-Hendar-Kip");
+            URI url = new URI("https://github.com/Soni-Hendar-Kip/SoniEnkripsi");
             if (Desktop.isDesktopSupported()) {
                 try {
                     desktop.browse(url);

@@ -249,6 +249,7 @@
           <Color blue="ff" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Soni Hendar // PTI 4B"/>
+        <Property name="toolTipText" type="java.lang.String" value="Klik to opeh Github"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TextSoniHendar_MouseClicked"/>
