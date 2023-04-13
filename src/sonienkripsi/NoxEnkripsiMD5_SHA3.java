@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
  *
  * @author Soni Hendarkanto on Apache NetBeans IDE 16 with Linux Mint 21.1
  * "VERA" Cinnamon Desktop Edition
+ * My github: https://github.com/Soni-Hendar-Kip/SoniEnkripsi
  */
 public class NoxEnkripsiMD5_SHA3 extends javax.swing.JFrame {
 

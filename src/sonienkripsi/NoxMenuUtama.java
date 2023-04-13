@@ -1,8 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package sonienkripsi;
+
+import java.awt.*;
+import java.io.*;
+import java.net.*;
 
 /**
  *
@@ -11,7 +12,9 @@ package sonienkripsi;
 public class NoxMenuUtama extends javax.swing.JFrame {
 
     /**
-     * Creates new form NoxMenuUtama
+     * @author Soni Hendarkanto on Apache NetBeans IDE 16 with Linux Mint 21.1
+     * "VERA" Cinnamon Desktop Edition
+     * My github: https://github.com/Soni-Hendar-Kip/SoniEnkripsi
      */
     public NoxMenuUtama() {
         initComponents();
@@ -36,6 +39,7 @@ public class NoxMenuUtama extends javax.swing.JFrame {
         BtAES_ = new javax.swing.JButton();
         BtMD5_ = new javax.swing.JButton();
         BtAES_Key_ = new javax.swing.JButton();
+        TxGithub_ = new javax.swing.JLabel();
 
         jLabel4.setText("jLabel4");
 
@@ -84,6 +88,21 @@ public class NoxMenuUtama extends javax.swing.JFrame {
             }
         });
 
+        TxGithub_.setFont(new java.awt.Font("Liberation Sans", 0, 11)); // NOI18N
+        TxGithub_.setForeground(new java.awt.Color(0, 51, 255));
+        TxGithub_.setText("view source on github");
+        TxGithub_.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TxGithub_MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                TxGithub_MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                TxGithub_MouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -97,19 +116,23 @@ public class NoxMenuUtama extends javax.swing.JFrame {
                             .addComponent(jSeparator1)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(TxGithub_))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(315, 315, 315)
-                        .addComponent(jLabel5)
-                        .addGap(0, 316, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(315, 315, 315)
+                                .addComponent(jLabel5))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(BtMD5_, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(37, 37, 37)
+                                .addComponent(BtAES_, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35)
+                                .addComponent(BtAES_Key_, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 39, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(BtMD5_, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(BtAES_, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(BtAES_Key_, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -134,7 +157,9 @@ public class NoxMenuUtama extends javax.swing.JFrame {
                     .addComponent(BtAES_, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtMD5_, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtAES_Key_, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addComponent(TxGithub_)
+                .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(28, 28, 28)
@@ -160,6 +185,34 @@ public class NoxMenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
         new NoxAES_WIthKey().setVisible(true);
     }//GEN-LAST:event_BtAES_Key_ActionPerformed
+
+    private void TxGithub_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxGithub_MouseClicked
+        // TODO add your handling code here:
+        TxGithub_.setForeground(Color.red);
+        try {
+            Desktop desktop = Desktop.getDesktop();
+            URI url = new URI("https://github.com/Soni-Hendar-Kip/SoniEnkripsi");
+            if (Desktop.isDesktopSupported()) {
+                try {
+                    desktop.browse(url);
+                } catch (IOException ex) {
+                    System.out.println(ex);
+                }
+            }
+        } catch (URISyntaxException ex) {
+            System.out.println(ex);
+        }
+    }//GEN-LAST:event_TxGithub_MouseClicked
+
+    private void TxGithub_MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxGithub_MouseEntered
+        // TODO add your handling code here:
+        TxGithub_.setForeground(Color.red);
+    }//GEN-LAST:event_TxGithub_MouseEntered
+
+    private void TxGithub_MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxGithub_MouseExited
+        // TODO add your handling code here:
+        TxGithub_.setForeground(Color.blue);
+    }//GEN-LAST:event_TxGithub_MouseExited
 
     /**
      * @param args the command line arguments
@@ -200,6 +253,7 @@ public class NoxMenuUtama extends javax.swing.JFrame {
     private javax.swing.JButton BtAES_;
     private javax.swing.JButton BtAES_Key_;
     private javax.swing.JButton BtMD5_;
+    private javax.swing.JLabel TxGithub_;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
