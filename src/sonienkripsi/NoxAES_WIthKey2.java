@@ -14,8 +14,8 @@ import javax.swing.JOptionPane;
  * @author montox nox on Linux Mint
  * source: https://howtodoinjava.com/java/java-security/java-aes-encryption-example/
  */
-public class NoxAES_WIthKey extends javax.swing.JFrame {
-    String originalString, encryptedString, decryptedString;
+public class NoxAES_WIthKey2 extends javax.swing.JFrame {
+    String SourceEncrypt, encryptedString, decryptedString;
 
     private static SecretKeySpec secretKey;
     private static byte[] key;
@@ -62,11 +62,9 @@ public class NoxAES_WIthKey extends javax.swing.JFrame {
     /**
      * Creates new form NoxAES
      */
-    public NoxAES_WIthKey() {
+    public NoxAES_WIthKey2() {
         initComponents();
-        BtDekrip_.setVisible(false);
-        jLabel4.setVisible(false);
-        //TextDekripsi_.setVisible(false);
+        //BtDekrip_.setVisible(false);
     }
 
     /**
@@ -79,14 +77,12 @@ public class NoxAES_WIthKey extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TextASLI_ = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         TextAES_ = new javax.swing.JTextArea();
-        BtEnkrip_ = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        TextDekripsi_ = new javax.swing.JTextArea();
         BtDekrip_ = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         TextKunci_ = new javax.swing.JTextField();
@@ -101,18 +97,9 @@ public class NoxAES_WIthKey extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Praktek Enkripsi & Dekripsi AES");
 
-        jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
-        jLabel2.setText("Kalimat Asli :");
-
-        TextASLI_.setColumns(20);
-        TextASLI_.setRows(5);
-        TextASLI_.setToolTipText("Di sini tuliskan kalimat yang ingin di enkripsi...");
-        jScrollPane1.setViewportView(TextASLI_);
-
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
-        jLabel3.setText("Hasil Enkripsi AES :");
+        jLabel3.setText("Kalimat Yang Sudah Ter-Enkripsi AES :");
 
-        TextAES_.setEditable(false);
         TextAES_.setColumns(20);
         TextAES_.setFont(new java.awt.Font("Liberation Sans", 3, 18)); // NOI18N
         TextAES_.setForeground(new java.awt.Color(255, 0, 51));
@@ -120,17 +107,16 @@ public class NoxAES_WIthKey extends javax.swing.JFrame {
         TextAES_.setRows(5);
         jScrollPane2.setViewportView(TextAES_);
 
-        BtEnkrip_.setFont(new java.awt.Font("Liberation Sans", 3, 14)); // NOI18N
-        BtEnkrip_.setText("Enkrip");
-        BtEnkrip_.setToolTipText("Klik untuk memulai proses enkripsi");
-        BtEnkrip_.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtEnkrip_ActionPerformed(evt);
-            }
-        });
-
         jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
         jLabel4.setText("Dekripsi ke kalimat asli :");
+
+        TextDekripsi_.setEditable(false);
+        TextDekripsi_.setColumns(20);
+        TextDekripsi_.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        TextDekripsi_.setForeground(new java.awt.Color(0, 0, 255));
+        TextDekripsi_.setLineWrap(true);
+        TextDekripsi_.setRows(5);
+        jScrollPane3.setViewportView(TextDekripsi_);
 
         BtDekrip_.setFont(new java.awt.Font("Liberation Sans", 3, 14)); // NOI18N
         BtDekrip_.setText("Dekrip");
@@ -166,34 +152,30 @@ public class NoxAES_WIthKey extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TextKunci_))
-                    .addComponent(jScrollPane1)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 292, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel6)
                         .addGap(285, 285, 285))
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
+                        .addGap(123, 123, 123)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(BtDekrip_, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(165, 165, 165)
-                                .addComponent(jLabel4))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(BtEnkrip_, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(178, 178, 178)
-                                .addComponent(jLabel3)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 128, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TextKunci_))
+            .addComponent(jScrollPane3)
+            .addComponent(jScrollPane2)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BtDekrip_, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(165, 165, 165)
+                        .addComponent(jLabel4))
+                    .addComponent(jLabel3))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,62 +184,35 @@ public class NoxAES_WIthKey extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
-                .addGap(35, 35, 35)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(TextKunci_, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtEnkrip_)
-                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtDekrip_)
                     .addComponent(jLabel4))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16))
+                .addGap(41, 41, 41))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtEnkrip_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtEnkrip_ActionPerformed
-        // TODO add your handling code here:
-        originalString = TextASLI_.getText();
-        final String secretKey = TextKunci_.getText();
-        encryptedString = NoxAES_WIthKey.encrypt(originalString, secretKey);
-
-        if (TextASLI_.getText().equals("") || TextKunci_.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Maaf...!!!\nTeks Kalimat Asli atau Kata Kunci Rahasia\nbelum di isi...");
-            TextASLI_.requestFocus();
-            /* if (TextKunci_.getText().equals("")) {
-                JOptionPane.showMessageDialog(null, "Kunci Rahasia belum di isi...");
-                TextKunci_.requestFocus();
-            https://howtodoinjava.com/java/java-security/java-aes-encryption-example/
-            } */
-        }
-        /* if (TextKunci_.getText().equals("")) {
-                JOptionPane.showMessageDialog(null, "Kunci Rahasia belum di isi...");
-                TextKunci_.requestFocus();
-        } */
-        else {
-            TextAES_.setText(encryptedString);
-        }
-    }//GEN-LAST:event_BtEnkrip_ActionPerformed
-
     private void BtDekrip_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtDekrip_ActionPerformed
         // TODO add your handling code here:
+        SourceEncrypt=TextAES_.getText();
         final String secretKey = TextKunci_.getText();
-        decryptedString = NoxAES_WIthKey.decrypt(encryptedString, secretKey);
-        //TextDekripsi_.setText(decryptedString);
+        decryptedString = NoxAES_WIthKey2.decrypt(SourceEncrypt, secretKey);
+        TextDekripsi_.setText(decryptedString);
     }//GEN-LAST:event_BtDekrip_ActionPerformed
 
     /**
@@ -277,39 +232,39 @@ public class NoxAES_WIthKey extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NoxAES_WIthKey.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NoxAES_WIthKey2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NoxAES_WIthKey.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NoxAES_WIthKey2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NoxAES_WIthKey.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NoxAES_WIthKey2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NoxAES_WIthKey.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NoxAES_WIthKey2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NoxAES_WIthKey().setVisible(true);
+                new NoxAES_WIthKey2().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtDekrip_;
-    private javax.swing.JButton BtEnkrip_;
     private javax.swing.JTextArea TextAES_;
-    private javax.swing.JTextArea TextASLI_;
+    private javax.swing.JTextArea TextDekripsi_;
     private javax.swing.JTextField TextKunci_;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
