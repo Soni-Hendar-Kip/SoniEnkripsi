@@ -7,7 +7,6 @@ import java.util.Arrays;
 import java.util.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,7 +14,7 @@ import javax.swing.JOptionPane;
  * source: https://howtodoinjava.com/java/java-security/java-aes-encryption-example/
  */
 public class NoxAES_WIthKey2 extends javax.swing.JFrame {
-    String SourceEncrypt, encryptedString, decryptedString;
+    String KalimatEnkrip, ProsesDekrip;
 
     private static SecretKeySpec secretKey;
     private static byte[] key;
@@ -95,7 +94,7 @@ public class NoxAES_WIthKey2 extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Praktek Enkripsi & Dekripsi AES");
+        jLabel1.setText("Dekriptor AES With Secret-Key");
 
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
         jLabel3.setText("Kalimat Yang Sudah Ter-Enkripsi AES :");
@@ -108,7 +107,7 @@ public class NoxAES_WIthKey2 extends javax.swing.JFrame {
         jScrollPane2.setViewportView(TextAES_);
 
         jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
-        jLabel4.setText("Dekripsi ke kalimat asli :");
+        jLabel4.setText("Hasil Dekripsi ke kalimat asli :");
 
         TextDekripsi_.setEditable(false);
         TextDekripsi_.setColumns(20);
@@ -132,7 +131,7 @@ public class NoxAES_WIthKey2 extends javax.swing.JFrame {
         TextKunci_.setToolTipText("Ketik kata / kalimat yang dijadikan sebagai kunci rahasia");
 
         jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
-        jLabel6.setText("Dengan Kunci Rahasia");
+        jLabel6.setText("Soni Hendar - PTI 4B");
 
         jScrollPane4.setBackground(new java.awt.Color(242, 242, 242));
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -141,6 +140,7 @@ public class NoxAES_WIthKey2 extends javax.swing.JFrame {
         jTextArea1.setBackground(new java.awt.Color(204, 204, 204));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Liberation Sans", 3, 12)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(0, 0, 204));
         jTextArea1.setRows(5);
         jTextArea1.setText("Keterangan:\nKunci Rahasia untuk DEKRIPSI, harus sama dengan saat ENKRIPSI awal,\nKalau berbeda maka proses dekrip akan gagal.");
         jScrollPane4.setViewportView(jTextArea1);
@@ -172,10 +172,10 @@ public class NoxAES_WIthKey2 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(BtDekrip_, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(165, 165, 165)
-                        .addComponent(jLabel4))
+                        .addGap(153, 153, 153)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel3))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 240, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,10 +209,10 @@ public class NoxAES_WIthKey2 extends javax.swing.JFrame {
 
     private void BtDekrip_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtDekrip_ActionPerformed
         // TODO add your handling code here:
-        SourceEncrypt=TextAES_.getText();
+        KalimatEnkrip=TextAES_.getText();
         final String secretKey = TextKunci_.getText();
-        decryptedString = NoxAES_WIthKey2.decrypt(SourceEncrypt, secretKey);
-        TextDekripsi_.setText(decryptedString);
+        ProsesDekrip = NoxAES_WIthKey2.decrypt(KalimatEnkrip, secretKey);
+        TextDekripsi_.setText(ProsesDekrip);
     }//GEN-LAST:event_BtDekrip_ActionPerformed
 
     /**

@@ -83,8 +83,9 @@ public class NoxMenuUtama extends javax.swing.JFrame {
             }
         });
 
-        BtAES_Key_.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
-        BtAES_Key_.setText("Enkrip AES dengan Kunci Rahasia");
+        BtAES_Key_.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        BtAES_Key_.setText("Enkriptor AES");
+        BtAES_Key_.setToolTipText("Enkriptor AES dengan Kunci Rahasia");
         BtAES_Key_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtAES_Key_ActionPerformed(evt);
@@ -106,8 +107,9 @@ public class NoxMenuUtama extends javax.swing.JFrame {
             }
         });
 
-        BtAES_Key_1.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
-        BtAES_Key_1.setText("Dekrip AES dengan Kunci Rahasia");
+        BtAES_Key_1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        BtAES_Key_1.setText("Dekriptor AES");
+        BtAES_Key_1.setToolTipText("Dekriptor AES dengan Kunci Rahasia");
         BtAES_Key_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtAES_Key_1ActionPerformed(evt);
@@ -115,7 +117,8 @@ public class NoxMenuUtama extends javax.swing.JFrame {
         });
 
         jLabel7.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
-        jLabel7.setText("---->>");
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText(">>>>");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -139,9 +142,9 @@ public class NoxMenuUtama extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addComponent(BtAES_Key_, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtAES_Key_1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64))
             .addGroup(layout.createSequentialGroup()
@@ -182,17 +185,17 @@ public class NoxMenuUtama extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtAES_Key_, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtAES_Key_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(7, 7, 7)
                 .addComponent(TxGithub_)
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(28, 28, 28)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(591, Short.MAX_VALUE)))
+                    .addContainerGap(594, Short.MAX_VALUE)))
         );
 
         pack();
