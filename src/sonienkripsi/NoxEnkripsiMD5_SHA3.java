@@ -81,6 +81,7 @@ public class NoxEnkripsiMD5_SHA3 extends javax.swing.JFrame {
         ButReset_ = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setAlwaysOnTop(true);
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N

@@ -93,6 +93,7 @@ public class NoxAES_WIthKey extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        BtReset_ = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -161,6 +162,15 @@ public class NoxAES_WIthKey extends javax.swing.JFrame {
         jTextArea1.setText("Keterangan:\nKunci Rahasia untuk DEKRIPSI, harus sama dengan saat ENKRIPSI awal,\nKalau berbeda maka proses dekrip akan gagal.");
         jScrollPane4.setViewportView(jTextArea1);
 
+        BtReset_.setFont(new java.awt.Font("Liberation Sans", 3, 14)); // NOI18N
+        BtReset_.setText("Reset");
+        BtReset_.setToolTipText("Klik untuk memulai proses enkripsi");
+        BtReset_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtReset_ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -185,11 +195,7 @@ public class NoxAES_WIthKey extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(BtDekrip_, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(165, 165, 165)
-                                        .addComponent(jLabel4))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(BtEnkrip_, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(178, 178, 178)
-                                        .addComponent(jLabel3)))
+                                        .addComponent(jLabel4)))
                                 .addGap(0, 266, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
@@ -197,7 +203,13 @@ public class NoxAES_WIthKey extends javax.swing.JFrame {
                                 .addComponent(TextKunci_))
                             .addComponent(jScrollPane1)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2))
+                            .addComponent(jScrollPane2)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(BtEnkrip_, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(178, 178, 178)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BtReset_, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -218,7 +230,8 @@ public class NoxAES_WIthKey extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtEnkrip_)
-                    .addComponent(jLabel3))
+                    .addComponent(jLabel3)
+                    .addComponent(BtReset_))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -253,6 +266,13 @@ public class NoxAES_WIthKey extends javax.swing.JFrame {
         final String secretKey = TextKunci_.getText();
         RumusDekrip = NoxAES_WIthKey.decrypt(RumusEnkrip, secretKey);
     }//GEN-LAST:event_BtDekrip_ActionPerformed
+
+    private void BtReset_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtReset_ActionPerformed
+        // TODO add your handling code here:
+        TextASLI_.setText("");
+        TextKunci_.setText("");
+        TextAES_.setText("");
+    }//GEN-LAST:event_BtReset_ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -293,6 +313,7 @@ public class NoxAES_WIthKey extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtDekrip_;
     private javax.swing.JButton BtEnkrip_;
+    private javax.swing.JButton BtReset_;
     private javax.swing.JTextArea TextAES_;
     private javax.swing.JTextArea TextASLI_;
     private javax.swing.JTextField TextKunci_;
